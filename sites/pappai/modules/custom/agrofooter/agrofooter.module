@@ -1,0 +1,69 @@
+<?php
+function agrofooter_block_info() {
+    $blocks[0] = array(
+        'info' => t('Footer blocks'),
+    );
+    return $blocks;
+}
+
+
+function agrofooter_block_view($delta='') {
+    $block = array();
+    switch ($delta) {
+        case 0:
+            $block['subject'] = t('<none>');
+            $tax = array("tipologia","abitudine_alimentare");
+            $block['content'] = agrofooter_block_content($tax);
+            break;
+    }
+    return $block;
+}
+
+
+function agrofooter_block_content($tax_array) {
+
+    $output="";
+
+    foreach ($tax_array as $taxonomy_key => $taxonomy_value) {
+        $output.='<div class="col-md-3">';
+        $vid = taxonomy_vocabulary_machine_name_load($taxonomy_value);
+        if ($vid->name=="Tipologia")
+            if ($GLOBALS['language']->language=="en")
+                $output.='<h5 class="product_title title-allergeni">Tipology</h5><ul>';
+            else
+                $output.='<h5 class="product_title title-allergeni">'.$vid->name.'</h5><ul>';
+
+        if ($vid->name=="Abitudine alimentare")
+            if ($GLOBALS['language']->language=="en")
+                $output.='<h5 class="product_title title-allergeni">Diet and Lifestyle</h5><ul>';
+            else
+                $output.='<h5 class="product_title title-allergeni">'.$vid->name.'</h5><ul>';
+
+        $vocab = taxonomy_get_tree($vid->vid);
+
+        $terms_counter = 0;
+        foreach ($vocab as $key => $value) {
+            if ($terms_counter == 9)
+            {
+                $output.='<div class="col-md-3">';
+                $output.='<h5 class="product_title title-allergeni">&nbsp;</h5><ul>';
+            }
+            $term = taxonomy_term_load($vocab[$key]->tid);
+            $term_uri = taxonomy_term_uri($term);
+            $output .= "<a href='".$GLOBALS['base_url']."/".$term_uri['path']."'><li>" . $term->name_field[$GLOBALS['language']->language]['0']['value'] . "</li></a>";
+
+            if ($terms_counter == 8)
+            {
+                $output.='</ul></div>';
+            }
+
+            $terms_counter++;
+        }
+
+        $output .= '</ul></div>';
+    }
+
+    return $output;
+}
+
+?>

@@ -1,0 +1,5 @@
+<div class="widget-content">
+  <?php if ($title): ?>
+    <?php print $title; ?>
+  <?php endif; ?>
+</div>

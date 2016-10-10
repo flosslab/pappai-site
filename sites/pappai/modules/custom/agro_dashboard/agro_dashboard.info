@@ -1,0 +1,11 @@
+name = Agro Dashboard
+description = Dashboard per il monitoraggio sull'utilizzo di tassonomie e categorizzazioni
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = charts
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = tags
+features_exclude[dependencies][ctools] = ctools

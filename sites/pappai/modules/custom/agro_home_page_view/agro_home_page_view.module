@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Agro Home page View feature.
+ */
+
+include_once 'agro_home_page_view.features.inc';

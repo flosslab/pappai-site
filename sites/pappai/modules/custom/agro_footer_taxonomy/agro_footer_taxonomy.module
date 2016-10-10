@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Agro Footer Taxonomy feature.
+ */
+
+include_once 'agro_footer_taxonomy.features.inc';

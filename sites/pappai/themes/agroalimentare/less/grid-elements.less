@@ -1,0 +1,283 @@
+
+table th, table td {
+  vertical-align: top;
+  padding: 5px 5px;
+  text-align: left;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'feathericons';
+  src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
+  src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
+  url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+  url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+  url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
+}
+
+/*
+.grid {
+	position: relative;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+}*/
+
+/* Common style */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 20px;
+  z-index: 10;
+  /*background: #ededed;*/
+  text-align: center;
+  cursor: pointer;
+  border:3px solid @color-light;
+}
+
+.grid figure:hover {
+  border:3px solid @color-dark;
+  z-index: 10;
+ }
+
+.grid figure img {
+  position: relative;
+  display: block;
+  /*min-height: 100%;*/
+  max-width: 100%;
+  /*opacity: 0.8;*/
+}
+
+.grid figure figcaption {
+  /*padding: 2em;*/
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/* Anchor will cover the whole item by default */
+.grid figure figcaption > a {
+  z-index: 500;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.grid figure figcaption ul{
+  margin:5px 20px 0px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.grid figure figcaption li span, .grid .lineage-item-level-0{
+  color: @color-grey;
+  font-size: @font-size-small;
+  float:left;
+  line-height: 30px;
+  width: 170px;
+  text-align: left;
+}
+
+.indicatore, .grid .lineage-item-level-1 {
+  height: 30px;
+  line-height: 30px;
+  float:left;
+}
+.tabella-allergeni .indicatore {
+  float: right;
+  text-align: right;
+}
+.indicatore:before{
+  border-radius: 8px;
+  width: 16px;
+  height: 16px;
+  content:"";
+  display: inline-block;
+}
+.yellow:before{
+  background-color: #fcfcb6;
+}
+.red:before{
+  background-color: #a91201;
+}
+
+.grid figure h5 span {
+  font-weight: 800;
+}
+
+.grid figure figcaption h2 a {
+  color:@color-light;
+  font-size: @font-size-large;
+}
+
+.grid figure figcaption h2 a:hover {
+  text-decoration:none;
+}
+
+
+
+.grid figure h5,
+.grid figure p {
+  margin: 0;
+}
+
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+
+/*---------------*/
+/***** Zoe *****/
+/*---------------*/
+
+figure.effect-zoe figcaption {
+  top: auto;
+  z-index: 10;
+  bottom: 0;
+  /*padding: 0em 1em 1em 1em;*/
+  height: 5em;
+  background: fade(@color-light,75%);
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+figure.effect-zoe h2 {
+  float: left;
+}
+
+figure.effect-zoe p.icon-links a {
+  float: right;
+  font-size: 1.4em;
+  color:@color-light;
+}
+
+figure.effect-zoe:hover p.icon-links a:hover,
+figure.effect-zoe:hover p.icon-links a:focus {
+  color: #252d31;
+}
+
+figure.effect-zoe div.description {
+  position: absolute;
+  bottom: 14em;
+  height: 80px;
+  width:100%;
+  color: @color-light;
+  background-color: fade(@color-grey,75%);
+  font-size: @font-size-small;
+  opacity: 0;
+  -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+  -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+}
+
+figure.effect-zoe ol {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+
+
+figure.effect-zoe h2,
+figure.effect-zoe p.icon-links a {
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0,200%,0);
+  transform: translate3d(0,200%,0);
+}
+
+figure.effect-zoe p.icon-links a span::before {
+  display: inline-block;
+  padding: 8px 10px;
+  font-family: 'feathericons';
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-eye::before {
+  content: '\e000';
+}
+
+.icon-paper-clip::before {
+  content: '\e001';
+}
+
+.icon-heart::before {
+  content: '\e024';
+}
+
+figure.effect-zoe h2 {
+  display: inline-block;
+  font-size:20px;
+  width: 100%;
+  color:@color-white;
+}
+
+figure.effect-zoe:hover div.description {
+  opacity: 1;
+  width: 240px;
+}
+
+figure.effect-zoe:hover figcaption,
+figure.effect-zoe:hover h2,
+figure.effect-zoe:hover p.icon-links a {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  text-decoration:none;
+}
+
+figure.effect-zoe:hover h2 {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+
+figure.effect-zoe:hover p.icon-links a:nth-child(3) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+figure.effect-zoe:hover p.icon-links a:nth-child(2) {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+figure.effect-zoe:hover p.icon-links a:first-child {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+
+@media screen and (max-width: 50em) {
+  .grid figure {
+    display: inline-block;
+    float: none;
+    margin: 10px auto;
+    /*width: 100%;*/
+  }
+}

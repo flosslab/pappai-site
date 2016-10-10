@@ -1,0 +1,13 @@
+name = Agro Home page View
+description = Vista in home page per la ricerca dei prodotti
+core = 7.x
+package = Features
+version = 7.x-1.1
+project = agro_home_page_view
+dependencies[] = views
+dependencies[] = views_infinite_scroll
+dependencies[] = views_responsive_grid
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = prodotti
+features_exclude[dependencies][ctools] = ctools

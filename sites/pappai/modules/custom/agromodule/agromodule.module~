@@ -1,0 +1,17 @@
+<?php
+function mymodule_form_alter(&$form, &$form_state, $form_id){
+    if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'myviewname' && $form['#id'] == 'views-exposed-form-myviewname-page-1'){
+    $form['field_province_tid'] =array(
+       '#type' => 'select',
+       '#options' => $province_options,  
+       '#default_value' =>$default_province,
+       '#ajax' => array(
+        'callback' => 'ajax_parovince_select_callback',
+        'wrapper' => 'edit-field-city-tid',
+        'method' => 'replace',
+        'effect' => 'fade',
+        ),
+      );
+  }
+}
+?>

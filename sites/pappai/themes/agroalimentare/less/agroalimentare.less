@@ -1,0 +1,848 @@
+body {
+  color: @color-white;
+}
+a {
+  color:@color-grey;
+}
+
+a:hover {
+  color:@color-dark;
+}
+
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: @color-dark;
+}
+
+table th, table td {
+  padding:0;
+}
+
+body {
+  color:@color-grey;
+}
+
+.region-navigation {
+  background:none;
+}
+
+/* Oscurato momentaneamente header on scroll */
+.onscroll.show #header{
+  opacity: 0 !important;
+  z-index: 0;
+}
+
+#header-menu{
+  width:100%;
+  background-color:@color-grey;
+  height:30px;
+}
+
+@media (max-width: 767px) {
+  #header-menu { display:none; }
+}
+
+#main-navigation ul.menu{
+  padding-top:0;
+}
+
+#header-inside {
+  padding:0;
+}
+
+
+#header-inside-right i {
+  float:right;
+  font-size:25px;
+  margin: 10px 6px 5px 0;
+}
+
+#header-inside-left {
+  margin: 0 20px;
+}
+
+#search-area{
+
+  margin: 30px 0 0 0;
+  width: 65px;
+  float: right;
+
+
+  .fa {
+    float:left;
+  }
+  /*social icons*/
+  .fa-facebook-square {
+    color:#375a9e;
+  }
+
+  .fa-twitter-square{
+    color:#46b0e4;
+  }
+
+  .fa-instagram{
+    color:#b37661;
+  }
+
+  .fa-google-plus-square{
+    color:#de4331;
+  }
+
+  .fa-youtube-square{
+    color:#ec0031;
+  }
+
+}
+
+#header, .onscroll #header {
+  background-color:@color-white;
+  color: @color-yellow;
+}
+
+#subfooter {
+  background-color:@color-white;
+  padding-top:0;
+}
+
+.subfooter-area {
+  background-color:@color-white;
+  color: @color-light-grey;
+  text-align: center;
+}
+
+.subfooter-area a img {
+  margin-left:5px;
+}
+
+#footer-top {
+  background-color:@color-grey;
+  color: @color-dark;
+  ul{
+    color:@color-white;
+    list-style: none;
+  }
+  p, ul{
+    margin:0;
+    padding:0;
+  }
+}
+
+.loghi {
+
+  margin: 25px 0 50px 0;
+
+  #logo-sr{
+    width: 90px;
+    margin-left: 40px;
+  }
+
+  #logo-ras{
+    width:700px;
+  }
+}
+
+.footer-area a{
+  color:@color-white;
+}
+#toTop{
+  background-color:fade(@color-dark, 60%);
+}
+
+#toTop:hover {
+  background-color:fade(@color-dark, 60%);
+}
+
+#site-name {
+  float:left;
+}
+#site-name a {
+  color:@color-grey;
+  line-height:2;
+  font-size:22px;
+
+}
+
+#block-locale-language{
+  float:right;
+  padding:0;
+}
+
+ul.language-switcher-locale-url {
+  margin: 0;
+  list-style:none;
+}
+
+.language-switcher-locale-url li .language-link {
+  line-height: 32px;
+  color:@color-white;
+}
+
+.language-switcher-locale-url li {
+  display: inline;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.language-switcher-locale-url li a {
+  text-decoration: none;
+}
+
+.language-switcher-locale-url img{
+  display: none;
+}
+
+  @media (max-width: 767px){
+    #logo {
+      float:left;
+    }
+  }
+
+  .views-column{
+    width:285px;
+    float:left;
+  }
+
+  #logo h3{
+    color: @color-light;
+    padding: 0 10px;
+    float: left;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  #main-navigation.with-search-bar{
+    padding:0;
+    margin: 0 10px;
+  }
+
+  #main-navigation ul.menu li a{
+    color:#fff;
+  }
+
+  #main-navigation ul.menu li a:hover, #main-navigation ul.main-menu.menu>li.active-trail>a:hover {
+    color: @color-light;
+    background-color: transparent;
+    border-bottom: 2px solid @color-light;
+  }
+
+  #main-navigation .active {
+    color: @color-yellow !important;
+    /*border-bottom: 2px solid @color-light !important;*/
+  }
+
+  .not-front #main, .not-front .sidebar{
+    padding:0;
+  }
+
+  #page-intro-inside {
+    background-color:@color-light;
+    color:@color-dark;
+  }
+
+  .front .region-content{
+    padding:0 0 40px 0;
+  }
+
+  .node-type-prodotto #page-title, .node-type-ricetta #page-title{
+    display:none;
+  }
+
+  .form-item-field-territorio-tid {
+    display:none;
+  }
+
+  #edit-combine,  #edit-title {
+    font-family: "Verdana";
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-image: url('../img/cerca.png');
+    background-size: 35px;
+    padding-left: 10px !important;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-top:7px !important;
+  }
+
+  #edit-combine:focus, #edit-title:focus {
+    border-color:@color-dark;
+  }
+
+  #edit-combine::-webkit-input-placeholder, #edit-title::-webkit-input-placeholder {
+    color: #666 !important;
+    font-size: 13px;
+  }
+
+  #edit-combine::-moz-placeholder, #edit-title::-moz-placeholder {
+    color: #666 !important;
+    font-size: 13px;
+  }
+
+  #edit-combine:-moz-placeholder, #edit-title:-moz-placeholder {
+    color: #666 !important;
+    font-size: 13px;
+  }
+
+  #edit-combine:-ms-input-placeholder, #edit-title:-ms-input-placeholder {
+    color: #666 !important;
+    font-size: 13px;
+  }
+
+  .view.view-prodotti-home-page.view-id-prodotti_home_page.view-display-id-page {
+    margin: 0 20px;
+  }
+
+  #views-exposed-form-prodotti-page input , #views-exposed-form-prodotti-home-page-page input{
+    padding: 7px;
+  }
+
+  #views-exposed-form-prodotti-page ul, #views-exposed-form-prodotti-home-page-page ul{
+    background-color:#efefef;
+    border:1px solid #ccc;
+  }
+
+  .views-exposed-widgets .description {
+    margin-top:20px;
+  }
+
+  #views-exposed-form-prodotti-page .description h5, #views-exposed-form-prodotti-home-page-page .description h5{
+    margin:10px 0 5px 0;
+    color:@color-light-grey;
+  }
+
+  #views-exposed-form-prodotti-page .description span, #views-exposed-form-prodotti-home-page-page  .description span{
+    color:@color-grey;
+    font-size:@font-size-small;
+  }
+
+  .map-territorio{
+    position:absolute;
+    display:none;
+    z-index:-1;
+    top:21px;
+    width:210px;
+    height:337px;
+    background-repeat: no-repeat;
+  }
+
+  #map-box{
+    display:block;
+    height:337px;
+    width: 210px;
+  }
+
+  #map-bg {
+    z-index:10;
+    width:210px;
+    height:337px;
+  }
+
+  .views-exposed-form .row{
+    padding:10px 0;
+  }
+
+  .chosen-container-multi .chosen-choices{
+    box-shadow: none;
+  }
+
+  .chosen-container-multi .chosen-choices li.search-choice{
+    background:none;
+
+  }
+  .chosen-container-multi .chosen-choices .search-choice {
+    background: @color-dark !important;
+    color: @color-yellow !important;
+  }
+
+  .chosen-container{
+    width:100% !important;
+  }
+
+  .form-item-field-allergene-tid{
+
+  }
+
+  .chosen-container .chosen-results li.highlighted {
+    background-color: @color-dark;
+  }
+
+  .chosen-container-multi .chosen-choices li.search-choice{
+    border:none;
+    border-radius:5px;
+    padding:4px 25px 4px 5px;
+  }
+
+
+  #edit-reset
+  {
+    background-color:#666;
+    color: @color-light;
+    border-radius: 0;
+    margin-top: 22px;
+    width: 100%;
+  }
+
+  .views-reset-button{
+    float: right;
+    margin: 0 !important;
+    width: 100%;
+  }
+
+  /**Buttons**/
+  input[type="submit"]{
+    background-color: @color-dark;
+  }
+
+  input[type="submit"]:hover{
+    background-color: @color-grey;
+  }
+
+
+  .page-progetto {
+    font-family: verdana;
+    text-align: justify;
+
+    h4 {
+      margin-top: 0;
+    }
+
+    li {
+      list-style-type: square;
+    }
+
+    a {
+      color:@color-dark;
+    }
+
+  }
+
+
+
+  .prodotto-gallery{
+    margin-top:15px;
+    /*background-color: @color-light;*/
+    .field-name-field-gallery .field-items {
+      margin-left: -5px;
+      margin-right: -5px;
+      .field-item{
+        width: 50%;
+        padding: 5px;
+        float: left;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .box-ricetta {
+
+    i {
+      background-color: @color-dark;
+      padding: 8px;
+      color: #fff;
+      float: left;
+    }
+
+    h5 {
+      line-height: 32px;
+      margin-left: 15px;
+      color: @color-dark !important;
+    }
+    
+    .product-info-element {
+      margin-top: 10px;
+    }
+
+    a {
+      color: @color-dark !important;
+    }
+
+  }
+
+  .region-footer-top .title-allergeni {
+    padding-left: 0 !important;
+  }
+
+  .prodotto-page, .node-type-prodotto, .node-type-ricetta {
+    h3 {
+      color: @color-light-grey;
+    }
+
+    .field-name-field-stagionalita-inizio .field-item {
+      float: left;
+    }
+
+    .wrap-allergeni, .wrap-ricetta {
+      background-color: @color-light;
+    }
+
+    .wrap-ricetta {
+      padding-bottom:15px;
+    }
+
+
+    .title-allergeni, .info-ricetta {
+      padding-left: 30px;
+      //background-color: @color-light;
+      margin: 0;
+      height: 36px;
+      padding-top: 12px;
+      font-weight: normal;
+    }
+
+    .row-info-ricetta {
+      margin: 10px 0 0 10px;
+
+      img {
+        width:17px;
+        float:left;
+        margin-right:10px;
+      }
+
+      .field-label {
+        color:@color-light-grey;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      .field-items{
+        width:100px;
+      }
+
+    }
+
+    .tabella-allergeni {
+      list-style-type: none;
+      padding: 0;
+      //background-color: @color-light;
+      color: #999999;
+      font-size: 17px;
+      li {
+        &.alert-allergeni {
+          background-color: #fff;
+        }
+        //border-bottom:1px solid @color-grey;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px 0 30px;
+      }
+    }
+    .tabella-allergeni span{
+      float: right;
+    }
+
+    .legenda-indicatori {
+      overflow: hidden;
+      padding-left: 30px;
+      .indicatore {
+        float: left;
+        margin-right: 20px;
+        &:before {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .prodotto-scheda .classificazione {
+      border-bottom:3px solid @color-light-grey;
+    }
+    .product-name {
+      color: @color-light-grey;
+      margin-top: 0;
+    }
+
+    .prodotto-scheda .classificazione .field-items a {
+      color:@color-dark;
+      background-color:#fff;
+    }
+
+    .prodotto-scheda {
+
+      .field-label {
+        color:#000;
+        text-transform: uppercase;
+        font-weight: normal;
+      }
+
+      .prodotto-share{
+        margin-bottom: 10px;
+        text-align: right;
+
+        span {
+          color:@color-light-grey;
+          line-height: 21px;
+        }
+
+        .sharethis-buttons{
+          float:right;
+          margin-left: 10px;
+        }
+
+      }
+
+
+
+      .prodotto-marchio {
+        .field-label {
+          display: inline-block;
+          font-weight: normal;
+          color: #000;
+          margin: 0;
+          line-height: 21px;
+        }
+      }
+
+      .produttore-label {
+        text-transform: uppercase;
+        color: #000;
+        display: inline;
+        font-weight: normal;
+      }
+
+      .product-info-element {
+        margin-bottom: 10px;
+      }
+
+      .product-info-list {
+        margin: 10px 0;
+
+        .field-nome-produttore {
+          display:block;
+        }
+
+        .field-name-field-sito-azienda{
+          display: inline;
+        }
+
+
+
+      }
+
+      .field-name-field-prodotto-a a {
+        font-family: @font-family-oswald;
+      }
+
+      .product_title {
+        display: inline-block;
+        font-weight: normal;
+        color: #000;
+        margin: 0;
+      }
+      .field-items, .field-item {
+        display: inline-block;
+        a {
+          color: @color-dark;
+          &:hover {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+    }
+
+    .field-type-taxonomy-term-reference {
+      display: inline-block;
+      margin: 0;
+      font-size: 15px;
+      text-transform: none;
+      overflow: visible;
+
+      .field-item a {
+        background: none;
+        color: @color-dark;
+        display: inline;
+        margin: 0;
+        padding:0;
+        &:hover {
+          color: @color-dark;
+        }
+      }
+    }
+
+    .prodotto-bar{
+      background-color:@color-light;
+      line-height: 50px;
+      margin-bottom: 30px;
+      height: 50px;
+      padding: 0 15px;
+
+      .field-type-taxonomy-term-reference {
+        text-transform: uppercase;
+        font-size: 18px;
+        .field-item a {
+          &:before {
+            content: "#";
+          }
+        }
+      }
+      .field-label {
+        color: #000;
+        font-weight: normal;
+      }
+
+    }
+
+    .prodotti-correlati .view-header {
+
+      background-color:@color-light;
+      height: 50px;
+      padding: 0 15px;
+
+      h4 {
+        color: #000;
+        font-weight: normal;
+        padding-top: 10px;
+      }
+
+      .title-produttore{
+        color:@color-dark;
+      }
+
+    }
+
+    .prodotto-scheda .field-items {
+      color:@color-grey;
+      width:auto;
+      font-family: 'Verdana';
+    }
+
+    .product-valori-nutrizionali {
+      margin-top: 15px;
+      border: 1px solid @color-light-grey;
+      border-radius: 0;
+      background-color: @color-light;
+      .field-label,
+      .field-items {
+        color: @color-light-grey !important;
+        font-weight: normal !important;
+        text-transform: none !important;
+      }
+    }
+    .product-ingredienti {
+      margin-top: 15px;
+      padding: 19px;
+      .field-label,
+      .field-item a {
+        color: @color-light-grey;
+        font-weight: normal;
+      }
+    }
+
+    /*
+    .field-name-field-abitudine-alimentare .field-item{
+      padding:5px;
+    }*/
+
+
+  }
+
+  .feed-icon {
+    display: none !important;
+    margin:0;
+  }
+
+  /*Taxonomy page */
+
+  .page-taxonomy-term #main #page-title {
+    font-size:@font-size-base;
+    margin-left: 10px;
+  }
+
+
+
+
+  /** JCarousel **/
+  .jcarousel-skin-default .jcarousel-item {
+    width:200px;
+    height:150px;
+  }
+
+  .jcarousel-skin-default .jcarousel-clip-horizontal {
+    width: 100%;
+  }
+
+  .jcarousel-skin-default .jcarousel-container-horizontal {
+    width: 100%;
+    height: auto;
+    padding: 20px 40px;
+    margin: 0;
+  }
+
+  .jcarousel-skin-default .jcarousel-prev-horizontal {
+    top:75px;
+  }
+
+  .jcarousel-skin-default .jcarousel-next-horizontal {
+    top:75px;
+  }
+
+  .prodotti-correlati{
+
+    .views-field-title span{
+      margin: 0 0 5px;
+      display: block;
+      position: absolute;
+      top: 80px;
+      background: rgba(51,51,51,0.75);
+      width:200px;
+      height:70px;
+
+
+    }
+    .views-field-title a{
+      color:@color-white;
+    }
+  }
+
+  #row-title {
+    margin-bottom:0;
+  }
+
+  .field-label-inline .field-items {
+    width:240px;
+  }
+
+.node-type-prodotto .field-type-taxonomy-term-reference {
+  //display: inline;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  background: transparent url("../img/chosen-sprite.png") no-repeat scroll -42px 1px !important;
+}
+
+.chosen-container-multi .chosen-choices .search-choice .search-choice-close {
+  background: transparent url("../img/chosen-sprite.png") no-repeat scroll right top !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+  background-position: -42px -10px !important;
+}
+
+#page h1 {
+  display: none;
+}
+
+.block-agrofooter a {
+  color: #fff;
+}
+
+ul#nice-menu-1 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+li.menu-798.menuparent.menu-path-nolink.even.last {
+  padding: 6px 10px 10px 10px !important;
+  height: 33px;
+  color: #fff;
+  width: 150px;
+}
+
+ul#nice-menu-1 li {
+  background-color:@color-dark;
+}
+
+ul#nice-menu-1 li a{
+  color:@color-yellow;
+}

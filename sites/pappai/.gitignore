@@ -1,0 +1,8 @@
+settings*.php
+tmp
+files
+private
+
+/.idea
+/.idea/*
+themes/agroalimentare/.npm/node_modules

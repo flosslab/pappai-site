@@ -1,0 +1,12 @@
+name = Agro Prodotti correlati
+description = Blocco dei prodotti di un determinato produttore
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = agro_prodotti_correlati
+dependencies[] = jcarousel
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = related_products
+features_exclude[dependencies][ctools] = ctools

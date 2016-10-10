@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Agro Home View feature.
+ */
+
+include_once 'agro_home_view.features.inc';

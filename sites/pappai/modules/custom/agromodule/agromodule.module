@@ -1,0 +1,112 @@
+<?php
+
+/**
+ * Implements hook_init().
+ *
+ * On the page view "prodotti", set the exposed filter arguments before
+ * these are built to avoid "An illegal choice..." error.
+ */
+function agromodule_init() {
+    if ($GLOBALS['language']->language=='en')
+        $GLOBALS['conf']['chosen_placeholder_text_multiple'] = "Select one or more filters";
+    if (arg(0) == 'prodotti' && !arg(1) && !isset($_GET['field_allergene_tid']) && !isset($_GET['field_tipologia_tid']) && !isset($_GET['field_abitudine_alimentare_tid'])) {
+        //$_GET['field_allergene_tid'] = 'All';
+        //$_GET['field_tipologia_tid'] = 'All';
+        //$_GET['field_abitudine_alimentare_tid'] = 'All';
+    }
+}
+
+/*$form['#attached']['js'] = array(
+    drupal_get_path('module', 'ajax_example') . '/ajax_example.js',
+);*/
+
+/**
+ * Patch per l'applicazione del filtro multiplo su allergie e intolleranze
+ * Un bug del modulo Views di Drupal, applica solamente un filtro raggruppato alla volta, sebbene consenta la spunta su "Mulitple Filters"
+ * Verificare periodicamente eventuali patch a riguardo sul modulo Views
+ *
+ **/
+function agromodule_views_query_alter(&$view, &$query)
+{
+
+
+    if ($view->name == 'prodotti' OR $view->name == 'prodotti_home_page' OR $view->name == 'ricerca_prodotti') {
+
+        if ($_REQUEST['field_allergene_tid']) {
+            $par=$_REQUEST['field_allergene_tid'];
+            $addpar= array();
+            foreach ($par as $cod => $valpar) {
+                $array_tax = $view->filter['field_allergene_tid']->options['group_info']['group_items'][$valpar]["value"];
+
+                foreach ($array_tax as $keytax => $valtax) {
+                    array_push($addpar, array('field' => 'field_allergene_tid', 'value' => $valtax, 'numeric' => false));
+                }
+            }
+
+            if ($query->table_queue['field_data_field_allergene']['join']) {
+                foreach ($addpar as $keyaddpar => $valaddpar) {
+                    array_push($query->table_queue['field_data_field_allergene']['join']->extra, $valaddpar);
+                }
+            }
+        }
+    }
+
+}
+
+/*
+function agroalimentare_form_alter(&$form, &$form_state, $form_id){
+    if($form_id == "views_exposed_form"){
+        //dsm($form); // print $form array on the top of the page
+        if (isset($form['title'])) {
+            //$form['title'][] = array('#placeholder' => t('Gemeente...'));
+        }
+    }
+}
+
+function agroalimentare_preprocess_views_exposed_form(&$variables) {
+    $a=0;
+    if ($variables['form']['#id'] == 'views-exposed-form-prodotti-page') {
+
+            $variables['form']['title']['#attributes']['placeholder'] = t('arrival');
+            //$form['filter-identifier-name']['to1']['']['placeholder'] = t('departure');
+
+
+        /*foreach ($variables['widgets'] as $id => &$widget) {
+            switch ($id) {
+                case 'filter-field_territorio_tid': $widget->widget.='
+
+        <div class="form-item form-type-select form-item-field-territorio-tid" id="map-box">
+
+            <img usemap="#sardegna" src="'.base_path().path_to_theme().'/img/map-sardegna.png" id="map-bg">
+            <map name="sardegna" style="z-index:3;">
+                <area shape="poly" id="sassari" title="Tàtari" target="" coords="44,31,46,37,36,46,32,54,43,67,60,71,74,62,75,59,89,58,99,60,102,65,108,67,107,82,110,88,114,91,118,100,116,108,110,112,102,113,98,124,89,132,77,135,69,127,59,122,49,126,48,118,44,114,38,103,29,99,25,91,27,89,22,82,20,79,29,72,32,62,25,58,32,40,35,37">
+                <area shape="poly" id="gallura" title="Gaddura" target="" coords="184,97,167,97,157,98,132,120,122,124,113,116,110,111,116,108,118,101,115,92,108,82,108,67,100,61,89,56,104,37,122,31,122,18,149,13,158,21,162,37,171,65">
+                <area shape="poly" id="oristano" title="Oristano" target="" coords="61,209,68,218,86,220,107,212,118,201,119,193,127,187,116,174,121,166,117,157,116,144,95,142,89,149,85,140,88,131,76,136,59,122,43,130,56,142,57,148,52,154,55,157,55,165,44,171,47,197,53,196,58,191,65,203,60,208">
+                <area shape="poly" id="nuoro" title="Nuoro" target="" coords="191,114,185,128,178,133,170,150,172,154,166,160,161,157,147,166,140,177,128,186,115,174,121,166,116,145,96,142,91,147,86,139,87,133,98,122,101,113,109,112,116,118,120,121,126,121,157,97,184,97,185,107">
+                <area shape="poly" id="mediocampidano" title="Campidano" target="" coords="48,244,47,238,54,233,53,205,57,204,60,209,68,217,87,220,107,212,114,205,114,213,122,220,119,225,113,233,116,239,120,243,116,244,105,240,106,247,98,246,92,250,83,246,76,254,68,243,62,238,53,240">
+                <area shape="poly" id="ogliastra" title="Ogliastra" target="" coords="174,236,179,211,175,189,182,189,184,180,177,180,181,164,171,154,166,160,161,157,147,166,140,176,128,186,119,193,119,201,114,204,115,213,122,219,126,211,131,210,135,218,130,222,145,235,146,226,152,226,158,234,165,231">
+                <area shape="poly" id="sulcis" title="Sulcis" target="" coords="93,324,95,305,92,299,96,294,94,285,101,280,99,273,93,274,96,261,74,254,60,238,48,244,47,253,47,262,50,263,50,272,44,274,32,286,47,309,52,308,53,294,65,309,68,311,65,319,69,322,77,322,79,316">
+                <area shape="poly" id="cagliari" title="Cagliari" target="" coords="134,279,152,294,167,288,166,276,171,270,170,261,173,236,164,232,156,234,152,227,146,226,146,235,129,222,136,218,131,210,122,217,113,233,118,243,106,241,105,248,99,246,89,249,84,248,77,254,95,261,93,276,101,274,103,279,95,285,97,294,92,300,95,305,95,324,112,308,115,283,124,279">
+            </map>
+
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-sassari.png); background-size: 210px;" id="map-sassari"></div>
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-cagliari.png);background-size: 210px;" id="map-cagliari"></div>
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-oristano.png);background-size: 210px;"  id="map-oristano"></div>
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-nuoro.png);background-size: 210px;"  id="map-nuoro"></div>
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-sulcis.png);background-size: 210px;"  id="map-sulcis"></div>
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-gallura.png);background-size: 210px;" id="map-gallura"></div>
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-mediocampidano.png);background-size: 210px;"  id="map-mediocampidano"></div>
+            <div class="map-territorio" style="background:url('.base_path().path_to_theme().'/img/map-ogliastra.png);background-size: 210px;" id="map-ogliastra"></div>
+    </div>
+</div>';
+
+                    break;
+            }
+        }
+
+    }
+}*/
+
+?>
+
+

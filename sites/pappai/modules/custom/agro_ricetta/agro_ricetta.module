@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Agro Ricetta feature.
+ */
+
+include_once 'agro_ricetta.features.inc';

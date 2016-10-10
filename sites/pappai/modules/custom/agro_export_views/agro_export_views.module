@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Agro export views feature.
+ */
+
+include_once 'agro_export_views.features.inc';

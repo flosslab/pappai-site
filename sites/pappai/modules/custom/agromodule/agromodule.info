@@ -1,0 +1,3 @@
+name = Filtro ricerca prodotti
+description = A widget to display advanced filters
+core = 7.x

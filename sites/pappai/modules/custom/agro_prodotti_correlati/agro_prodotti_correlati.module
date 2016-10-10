@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Agro Prodotti correlati feature.
+ */
+
+include_once 'agro_prodotti_correlati.features.inc';

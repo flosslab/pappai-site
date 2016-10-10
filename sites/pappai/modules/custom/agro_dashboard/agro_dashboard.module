@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Agro Dashboard feature.
+ */
+
+include_once 'agro_dashboard.features.inc';
